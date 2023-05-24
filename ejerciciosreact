@@ -1,0 +1,267 @@
+// // Ejercicio 1: JSX
+// // Crea un nuevo componente llamado WelcomeMessage que renderice un mensaje de bienvenida en JSX. Luego, utiliza este componente en el componente principal App.
+
+export default function WelcomeMessage() {
+    const message = " programación de React";
+     let name = "Esteban";
+     return (
+         <p>
+             Hola {name}, bienvenid@ al curso de: {message}
+         </p>
+     );
+ }
+ 
+      // Ejercicio 2: Componentes
+      // Crea un nuevo componente llamado ProductCard que represente una tarjeta de producto con información como el nombre, la descripción y el precio. Utiliza este componente para mostrar al menos tres productos diferentes en el componente principal App.
+
+export default function ProductCard() {
+  const products = [{
+    nombre: "Bicicleta",
+    descripcion: "Una bicicleta es un vehículo de transporte de propulsión humana que consta de dos ruedas alineadas, generalmente del mismo tamaño, unidas por un marco que incluye manubrios para controlar la dirección y pedales para propulsarse. Las bicicletas son ampliamente utilizadas en todo el mundo como medio de transporte personal, recreación, ejercicio físico y competiciones deportivas. ",
+    precio: 1059999,
+  }, {
+    nombre: "Bicicleta Eléctrica",
+    descripcion: "Las bicicletas eléctricas son un transporte más que contribuye a la movilidad sostenible dentro de las grandes urbes. Hay ciudadanos que directamente poseen una en propiedad y la utilizan con frecuencia, y otros que prefieren alquilarlas. La diferencia principal respecto a los modelos convencionales es que disponen de pedaleo asistido, de manera que se reduce de una manera considerable el esfuerzo.",
+    precio: 1359999,
+  }, {
+    nombre: "Scooter",
+    descripcion: "Un scooter es un tipo de vehículo de dos ruedas con un diseño compacto, un asiento bajo y una plataforma plana para los pies del conductor. Es una alternativa popular a las motocicletas para la movilidad urbana y ofrece facilidad de uso y practicidad.",
+    precio: 1599999,
+  }, {
+    nombre: "Motocicleta",
+    descripcion: "Una motocicleta es un vehículo de dos ruedas propulsado por un motor de combustión interna, diseñado para transportar al conductor y, en algunos casos, a un pasajero. Las motocicletas son similares a las bicicletas, pero están equipadas con un motor, lo que les permite alcanzar mayores velocidades y distancias sin la necesidad de pedalear. ",
+    precio: 15879999,
+  }, {
+    nombre: "Carro",
+    descripcion: "Un carro, también conocido como automóvil, coche o vehículo a motor, es un medio de transporte terrestre de uso personal o familiar que se utiliza para desplazarse por carreteras y vías públicas. Un carro consta de cuatro ruedas (aunque existen vehículos de tres ruedas y algunos de más ruedas), un chasis que proporciona la estructura y soporte, un motor de combustión interna o eléctrico para la propulsión, y un sistema de dirección, frenado y transmisión para controlar el vehículo. ",
+    precio: 73469999,
+  }];
+
+  return (
+    <>
+      <li>
+        <p>
+          <strong>Primer nombre del producto:</strong> {products[0,0].nombre}
+        </p>
+
+        <p>
+          <strong>Descripcion:</strong> {products[0,0].descripcion}
+        </p>
+
+        <p>
+         <strong>Precio:</strong> {products[0,0].precio}
+        </p>
+      </li> 
+
+      <li>
+        <p>
+          <strong>Primer nombre del producto:</strong> {products[0,1].nombre}
+        </p>
+
+        <p>
+          <strong>Descripcion:</strong> {products[0,1].descripcion}
+        </p>
+
+        <p>
+         <strong>Precio:</strong> {products[0,1].precio}
+        </p>
+      </li>
+
+      <li>
+        <p>
+          <strong>Primer nombre del producto:</strong> {products[0,2].nombre}
+        </p>
+
+        <p>
+          <strong>Descripcion:</strong> {products[0,2].descripcion}
+        </p>
+
+        <p>
+         <strong>Precio:</strong> {products[0,2].precio}
+        </p>
+      </li>
+
+      <li>
+        <p>
+          <strong>Primer nombre del producto:</strong> {products[0,3].nombre}
+        </p>
+
+        <p>
+          <strong>Descripcion:</strong> {products[0,3].descripcion}
+        </p>
+
+        <p>
+         <strong>Precio:</strong> {products[0,3].precio}
+        </p>
+      </li>
+
+      <li>
+        <p>
+          <strong>Primer nombre del producto:</strong> {products[0,4].nombre}
+        </p>
+
+        <p>
+          <strong>Descripcion:</strong> {products[0,4].descripcion}
+        </p>
+
+        <p>
+         <strong>Precio:</strong> {products[0,4].precio}
+        </p>
+      </li>
+    </>
+  )
+}
+
+
+//Ejercicio 3: Props
+// Agrega propiedades (props) al componente ProductCard para pasar la información del producto desde el componente principal App. Incluye propiedades como el nombre, la descripción y el precio para cada producto y asegúrate de mostrar correctamente esta información en el componente ProductCard.
+
+export default function ProductCard() {
+    const products = [{
+      nombre: "Bicicleta",
+      descripcion: "Una bicicleta es un vehículo de transporte de propulsión humana que consta de dos ruedas alineadas, generalmente del mismo tamaño, unidas por un marco que incluye manubrios para controlar la dirección y pedales para propulsarse. Las bicicletas son ampliamente utilizadas en todo el mundo como medio de transporte personal, recreación, ejercicio físico y competiciones deportivas. ",
+      precio: 1059999,
+    }, {
+      nombre: "Bicicleta Eléctrica",
+      descripcion: "Las bicicletas eléctricas son un transporte más que contribuye a la movilidad sostenible dentro de las grandes urbes. Hay ciudadanos que directamente poseen una en propiedad y la utilizan con frecuencia, y otros que prefieren alquilarlas. La diferencia principal respecto a los modelos convencionales es que disponen de pedaleo asistido, de manera que se reduce de una manera considerable el esfuerzo.",
+      precio: 1359999,
+    }, {
+      nombre: "Scooter",
+      descripcion: "Un scooter es un tipo de vehículo de dos ruedas con un diseño compacto, un asiento bajo y una plataforma plana para los pies del conductor. Es una alternativa popular a las motocicletas para la movilidad urbana y ofrece facilidad de uso y practicidad.",
+      precio: 1599999,
+    }, {
+      nombre: "Motocicleta",
+      descripcion: "Una motocicleta es un vehículo de dos ruedas propulsado por un motor de combustión interna, diseñado para transportar al conductor y, en algunos casos, a un pasajero. Las motocicletas son similares a las bicicletas, pero están equipadas con un motor, lo que les permite alcanzar mayores velocidades y distancias sin la necesidad de pedalear. ",
+      precio: 15879999,
+    }, {
+      nombre: "Carro",
+      descripcion: "Un carro, también conocido como automóvil, coche o vehículo a motor, es un medio de transporte terrestre de uso personal o familiar que se utiliza para desplazarse por carreteras y vías públicas. Un carro consta de cuatro ruedas (aunque existen vehículos de tres ruedas y algunos de más ruedas), un chasis que proporciona la estructura y soporte, un motor de combustión interna o eléctrico para la propulsión, y un sistema de dirección, frenado y transmisión para controlar el vehículo. ",
+      precio: 73469999,
+    }];
+
+    return (
+      <>
+      <ComponenteHijo dato= {products[0,0].nombre}></ComponenteHijo>
+      <ComponenteHijo dato= {products[0,0].descripcion}></ComponenteHijo>
+      <ComponenteHijo dato= {products[0,0].precio}></ComponenteHijo>
+
+      <ComponenteHijo dato= {products[0,1].nombre}></ComponenteHijo>
+      <ComponenteHijo dato= {products[0,1].descripcion}></ComponenteHijo>
+      <ComponenteHijo dato= {products[0,1].precio}></ComponenteHijo>
+
+      <ComponenteHijo dato= {products[0,2].nombre}></ComponenteHijo>
+      <ComponenteHijo dato= {products[0,2].descripcion}></ComponenteHijo>
+      <ComponenteHijo dato= {products[0,2].precio}></ComponenteHijo>
+
+      <ComponenteHijo dato= {products[0,3].nombre}></ComponenteHijo>
+      <ComponenteHijo dato= {products[0,3].descripcion}></ComponenteHijo>
+      <ComponenteHijo dato= {products[0,3].precio}></ComponenteHijo>
+
+      <ComponenteHijo dato= {products[0,4].nombre}></ComponenteHijo>
+      <ComponenteHijo dato= {products[0,4].descripcion}></ComponenteHijo>
+      <ComponenteHijo dato= {products[0,4].precio}></ComponenteHijo>
+      </>
+    )
+}  
+
+
+const ComponenteHijo = (props) => {
+  return(
+    <li>
+      <p>
+      {props.dato}
+      </p>
+    </li>
+  );
+}
+
+    // Ejercicio 4: Map
+    // Crea una lista de productos en el componente principal App utilizando un array de objetos que contenga la información de cada producto. Luego, utiliza el método map para renderizar múltiples instancias del componente ProductCard con los datos de cada producto.
+
+export default function ProductCard () {
+  const products = [{
+    nombre: "Bicicleta",
+    descripcion: "Una bicicleta es un vehículo de transporte de propulsión humana que consta de dos ruedas alineadas, generalmente del mismo tamaño, unidas por un marco que incluye manubrios para controlar la dirección y pedales para propulsarse. Las bicicletas son ampliamente utilizadas en todo el mundo como medio de transporte personal, recreación, ejercicio físico y competiciones deportivas. ",
+    precio: 1059999,
+  }, {
+    nombre: "Bicicleta Eléctrica",
+    descripcion: "Las bicicletas eléctricas son un transporte más que contribuye a la movilidad sostenible dentro de las grandes urbes. Hay ciudadanos que directamente poseen una en propiedad y la utilizan con frecuencia, y otros que prefieren alquilarlas. La diferencia principal respecto a los modelos convencionales es que disponen de pedaleo asistido, de manera que se reduce de una manera considerable el esfuerzo.",
+    precio: 1359999,
+  }, {
+    nombre: "Scooter",
+    descripcion: "Un scooter es un tipo de vehículo de dos ruedas con un diseño compacto, un asiento bajo y una plataforma plana para los pies del conductor. Es una alternativa popular a las motocicletas para la movilidad urbana y ofrece facilidad de uso y practicidad.",
+    precio: 1599999,
+  }, {
+    nombre: "Motocicleta",
+    descripcion: "Una motocicleta es un vehículo de dos ruedas propulsado por un motor de combustión interna, diseñado para transportar al conductor y, en algunos casos, a un pasajero. Las motocicletas son similares a las bicicletas, pero están equipadas con un motor, lo que les permite alcanzar mayores velocidades y distancias sin la necesidad de pedalear. ",
+    precio: 15879999,
+  }, {
+    nombre: "Carro",
+    descripcion: "Un carro, también conocido como automóvil, coche o vehículo a motor, es un medio de transporte terrestre de uso personal o familiar que se utiliza para desplazarse por carreteras y vías públicas. Un carro consta de cuatro ruedas (aunque existen vehículos de tres ruedas y algunos de más ruedas), un chasis que proporciona la estructura y soporte, un motor de combustión interna o eléctrico para la propulsión, y un sistema de dirección, frenado y transmisión para controlar el vehículo. ",
+    precio: 73469999,
+  }];
+
+  return (
+    <>
+      {products.map(products => {
+        return <ComponenteHijo nombre={products.nombre} descripcion ={products.descripcion} precio = {products.precio}></ComponenteHijo>
+      })}
+    </>
+  );
+}
+
+const ComponenteHijo = (props) => {
+  return(
+    <li>
+      <p>{props.nombre}</p>
+      <p>{props.descripcion}</p>
+      <p>{props.precio}</p>
+    </li>
+  );
+}
+
+
+    // Ejercicio 5: Combinación de conceptos anteriores
+    // En este ejercicio final, crea un componente llamado ProductList que reciba una lista de productos como prop (props) y utilice el método map para renderizar dinámicamente múltiples instancias del componente ProductCard con los datos de cada producto. Utiliza este componente en el componente principal App y asegúrate de pasar la lista de productos como prop.
+
+export default function ProductCard() {
+    const products = [{
+        nombre: "Bicicleta",
+        descripcion: "Una bicicleta es un vehículo de transporte de propulsión humana que consta de dos ruedas alineadas, generalmente del mismo tamaño, unidas por un marco que incluye manubrios para controlar la dirección y pedales para propulsarse. Las bicicletas son ampliamente utilizadas en todo el mundo como medio de transporte personal, recreación, ejercicio físico y competiciones deportivas. ",
+        precio: 1059999,
+    }, {
+        nombre: "Bicicleta Eléctrica",
+        descripcion: "Las bicicletas eléctricas son un transporte más que contribuye a la movilidad sostenible dentro de las grandes urbes. Hay ciudadanos que directamente poseen una en propiedad y la utilizan con frecuencia, y otros que prefieren alquilarlas. La diferencia principal respecto a los modelos convencionales es que disponen de pedaleo asistido, de manera que se reduce de una manera considerable el esfuerzo.",
+        precio: 1359999,
+    }, {
+        nombre: "Scooter",
+        descripcion: "Un scooter es un tipo de vehículo de dos ruedas con un diseño compacto, un asiento bajo y una plataforma plana para los pies del conductor. Es una alternativa popular a las motocicletas para la movilidad urbana y ofrece facilidad de uso y practicidad.",
+        precio: 1599999,
+    }, {
+        nombre: "Motocicleta",
+        descripcion: "Una motocicleta es un vehículo de dos ruedas propulsado por un motor de combustión interna, diseñado para transportar al conductor y, en algunos casos, a un pasajero. Las motocicletas son similares a las bicicletas, pero están equipadas con un motor, lo que les permite alcanzar mayores velocidades y distancias sin la necesidad de pedalear. ",
+        precio: 15879999,
+    }, {
+        nombre: "Carro",
+        descripcion: "Un carro, también conocido como automóvil, coche o vehículo a motor, es un medio de transporte terrestre de uso personal o familiar que se utiliza para desplazarse por carreteras y vías públicas. Un carro consta de cuatro ruedas (aunque existen vehículos de tres ruedas y algunos de más ruedas), un chasis que proporciona la estructura y soporte, un motor de combustión interna o eléctrico para la propulsión, y un sistema de dirección, frenado y transmisión para controlar el vehículo. ",
+        precio: 73469999,
+    }];
+
+    return (
+        <ul>
+            {products.map((elemento) => {
+                return <ProductList nombre={elemento.nombre} descripcion={elemento.descripcion} precio={elemento.precio}></ProductList>
+            })}
+        </ul>
+    )
+}
+
+function ProductList(listadoProductos) {
+    return (
+        <>
+            <p><strong>Nompre del producto:</strong> {listadoProductos.nombre}</p>
+            <p><strong>Descripción:</strong> {listadoProductos.descripcion}</p>
+            <p><strong>Precio:</strong> {listadoProductos.precio}</p>
+        </>
+    )
+}
